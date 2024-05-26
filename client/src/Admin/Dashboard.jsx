@@ -47,12 +47,12 @@ export default function DashboardPage() {
           className="hidden dark:block"
         /> */}
       </div>
-      <div className="flex-col hidden md:flex">
-        <div className="border-b">
-          <div className="flex items-center h-16 px-4">
+      <div className="flex-col hidden w-full h-screen md:flex">
+        <div className="border-b ">
+          <div className="flex items-center h-16 px-4 ">
             <TeamSwitcher />
             <MainNav className="mx-6" />
-            <div className="flex items-center ml-auto space-x-4">
+            <div className="flex items-center ml-auto space-x-4 ">
               <Search />
               <UserNav />
             </div>
