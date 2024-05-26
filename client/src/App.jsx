@@ -1,4 +1,5 @@
 import { Button } from './components/ui/button'
+import Dashboard from './Admin/Dashboard'
 import {
   AlertDialog,
   AlertDialogAction,
@@ -16,9 +17,9 @@ function App() {
 
   return(
     <div className='flex items-center justify-center h-screen'>
-      <AlertDialog>
+      {/* <AlertDialog>
       <AlertDialogTrigger asChild>
-        <Button className="bg-black text-white" variant="outline">
+        <Button className="text-white bg-black" variant="outline">
           Welcome to Chatbot - Click me
         </Button>
       </AlertDialogTrigger>
@@ -34,7 +35,8 @@ function App() {
           <AlertDialogAction>Continue</AlertDialogAction>
         </AlertDialogFooter>
       </AlertDialogContent>
-    </AlertDialog>
+    </AlertDialog> */}
+    <Dashboard/>
     </div>
   )
 }
