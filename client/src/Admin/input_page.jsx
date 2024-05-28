@@ -2,7 +2,7 @@
 
 import StepperDemo from "./stepper-demo.jsx";
 
-export function Stepper() {
+export default function Stepper() {
     return (
         <div className="flex min-h-screen flex-col items-center py-24 px-5 gap-8 max-w-3xl mx-auto">
             <div className="w-full space-y-8">

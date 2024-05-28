@@ -17,7 +17,7 @@ export default function GeneralInfo() {
         </div>
         <div className="w-9/12 mx-16 pt-0">
             <Label htmlFor="text">Description</Label>
-            <Textarea placeholder="Type your message here." />
+            <Textarea placeholder="Bot Description" />
         </div>
         <div className="w-60 mx-16 pt-2">
             <Label htmlFor="text">Model</Label>

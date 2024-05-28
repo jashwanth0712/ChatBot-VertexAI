@@ -20,7 +20,7 @@ export default function StepperDemo() {
 						<Step key={stepProps.label} {...stepProps}>
 							{!<GeneralInfo/>}
 							{!<Knowledge/>}
-							<Personality/>
+							{<Personality/>}
 						</Step>
 					);
 				})}

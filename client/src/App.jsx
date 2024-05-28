@@ -11,14 +11,14 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import { Stepper } from './Admin/Input'
+import Stepper from './Admin/input_page'
 
 
 function App() {
-
+  // className='flex items-center justify-center h-screen'
   return(
     <div >
-      // className='flex items-center justify-center h-screen'
+      
     {!<Dashboard/>}
     <Stepper/>
     </div>
