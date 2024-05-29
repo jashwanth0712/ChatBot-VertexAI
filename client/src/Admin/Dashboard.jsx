@@ -1,7 +1,8 @@
 
 // import Image from "next/image";
-
+import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button.jsx";
+// import { Package2 } from "react-icons/fi";
 import {
   Card,
   CardContent,
@@ -23,15 +24,155 @@ import { Search } from "../components/ui/search.jsx";
 import TeamSwitcher from "../components/ui/team-switcher.jsx";
 import { UserNav } from "../components/ui/user-nav.jsx";
 
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+  TooltipProvider
+} from "../components/ui/tooltip.jsx"
+
+import {
+  ChevronLeft,
+  ChevronRight,
+  Copy,
+  CreditCard,
+  File,
+  Home,
+  LineChart,
+  ListFilter,
+  MoreVertical,
+  Package,
+  Package2,
+  PanelLeft,
+  
+  Settings,
+  ShoppingCart,
+  Truck,
+  Users2,
+} from "lucide-react"
+
+
+
 export const metadata = {
   title: "Dashboard",
   description: "Example dashboard app built using the components.",
 };
 
+
+
 export default function DashboardPage() {
   return (
     <>
-      <div className="md:hidden">
+
+        {/* Side Bar */}
+      {/* <div className="flex flex-col w-1/6 min-h-screen bg-muted/40"> */}
+        <aside className="fixed inset-y-0 left-0 z-10 flex-col hidden border-r w-30 bg-background sm:flex">
+          <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
+            <Link
+              to="#"
+              className="flex items-center justify-center gap-2 text-lg font-semibold rounded-full group h-9 w-9 shrink-0 bg-primary text-primary-foreground md:h-8 md:w-8 md:text-base"
+            >
+              <Package2 className="w-4 h-4 transition-all group-hover:scale-110" />
+              <span className="sr-only">Acme Inc</span>
+            </Link>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to="#"
+                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
+                  >
+                    <Home className="w-5 h-5" />
+                    <span className="sr-only">Dashboard</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">Dashboard</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to="#"
+                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 bg-accent text-accent-foreground hover:text-foreground md:h-8 md:w-8"
+                  >
+                    <ShoppingCart className="w-5 h-5" />
+                    <span className="sr-only">Orders</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">Orders</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to="#"
+                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
+                  >
+                    <Package className="w-5 h-5" />
+                    <span className="sr-only">Products</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">Products</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to="#"
+                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
+                  >
+                    <Users2 className="w-5 h-5" />
+                    <span className="sr-only">Customers</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">Customers</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to="#"
+                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
+                  >
+                    <LineChart className="w-5 h-5" />
+                    <span className="sr-only">Analytics</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">Analytics</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </nav>
+          <nav className="flex flex-col items-center gap-4 px-2 mt-auto sm:py-5">
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger asChild>
+                  <Link
+                    to="#"
+                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
+                  >
+                    <Settings className="w-5 h-5" />
+                    <span className="sr-only">Settings</span>
+                  </Link>
+                </TooltipTrigger>
+                <TooltipContent side="right">Settings</TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+          </nav>
+        </aside>
+      {/* </div> */}
+
+      {/* Side Bar */}
+
+        
+      <div className="w-5/6 md:hidden">
         {/* <Image
           src="/examples/dashboard-light.png"
           width={1280}
@@ -47,7 +188,7 @@ export default function DashboardPage() {
           className="hidden dark:block"
         /> */}
       </div>
-      <div className="flex-col hidden w-full h-screen md:flex">
+      <div className="flex-col hidden w-5/6 h-screen md:flex">
         <div className="border-b ">
           <div className="flex items-center h-16 px-4 ">
             <TeamSwitcher />
