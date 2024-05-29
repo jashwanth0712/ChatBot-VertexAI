@@ -11,7 +11,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog"
-import Stepper from './Admin/input_page'
 
 
 function App() {
@@ -19,8 +18,7 @@ function App() {
   return(
     <div >
       
-    {!<Dashboard/>}
-    <Stepper/>
+    <Dashboard/>
     </div>
   )
 }

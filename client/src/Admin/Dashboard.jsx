@@ -2,6 +2,8 @@
 // import Image from "next/image";
 import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button.jsx";
+import Stepper from '../Admin/input_page.jsx'
+import { useState } from "react";
 // import { Package2 } from "react-icons/fi";
 import {
   Card,
@@ -44,7 +46,7 @@ import {
   Package,
   Package2,
   PanelLeft,
-  
+  BotMessageSquare,
   Settings,
   ShoppingCart,
   Truck,
@@ -61,134 +63,61 @@ export const metadata = {
 
 
 export default function DashboardPage() {
+  const [currentPage, setCurrentPage] = useState('Dashboard');
+
+  const handlePageClick = (pageName) => {
+    setCurrentPage(pageName);
+  };
+  const routes = [
+    { name: 'Dashboard', icon: <Home className="w-5 h-5" />, path: '#' },
+    { name: 'Bots', icon: <BotMessageSquare className="w-5 h-5"/>, path: '#' },
+    // { name: 'Products', icon: <Package className="w-5 h-5" />, path: '#' },
+    // { name: 'Customers', icon: <Users2 className="w-5 h-5" />, path: '#' },
+    // { name: 'Analytics', icon: <LineChart className="w-5 h-5" />, path: '#' },
+    // { name: 'Settings', icon: <Settings className="w-5 h-5" />, path: '#' },
+  ];
   return (
-    <>
+    <div className="md:flex justify-center w-[100vw]">
 
         {/* Side Bar */}
       {/* <div className="flex flex-col w-1/6 min-h-screen bg-muted/40"> */}
-        <aside className="fixed inset-y-0 left-0 z-10 flex-col hidden border-r w-30 bg-background sm:flex">
-          <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
-            <Link
-              to="#"
-              className="flex items-center justify-center gap-2 text-lg font-semibold rounded-full group h-9 w-9 shrink-0 bg-primary text-primary-foreground md:h-8 md:w-8 md:text-base"
-            >
-              <Package2 className="w-4 h-4 transition-all group-hover:scale-110" />
-              <span className="sr-only">Acme Inc</span>
-            </Link>
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    to="#"
-                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
-                  >
-                    <Home className="w-5 h-5" />
-                    <span className="sr-only">Dashboard</span>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">Dashboard</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
+      <aside className="fixed inset-y-0 left-0 z-10 flex-col hidden border-r w-30 bg-background sm:flex">
+      <nav className="flex flex-col items-center gap-4 px-2 sm:py-5">
+        <Link
+          to="#"
+          className="flex items-center justify-center gap-2 text-lg font-semibold rounded-full group h-9 w-9 shrink-0 bg-primary text-primary-foreground md:h-8 md:w-8 md:text-base"
+        >
+          <Package2 className="w-4 h-4 transition-all group-hover:scale-110" />
+          <span className="sr-only">Acme Inc</span>
+        </Link>
 
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    to="#"
-                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 bg-accent text-accent-foreground hover:text-foreground md:h-8 md:w-8"
-                  >
-                    <ShoppingCart className="w-5 h-5" />
-                    <span className="sr-only">Orders</span>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">Orders</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    to="#"
-                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
-                  >
-                    <Package className="w-5 h-5" />
-                    <span className="sr-only">Products</span>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">Products</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    to="#"
-                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
-                  >
-                    <Users2 className="w-5 h-5" />
-                    <span className="sr-only">Customers</span>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">Customers</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    to="#"
-                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
-                  >
-                    <LineChart className="w-5 h-5" />
-                    <span className="sr-only">Analytics</span>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">Analytics</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </nav>
-          <nav className="flex flex-col items-center gap-4 px-2 mt-auto sm:py-5">
-            <TooltipProvider>
-              <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    to="#"
-                    className="flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8"
-                  >
-                    <Settings className="w-5 h-5" />
-                    <span className="sr-only">Settings</span>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent side="right">Settings</TooltipContent>
-              </Tooltip>
-            </TooltipProvider>
-          </nav>
-        </aside>
+        {routes.map((route, index) => (
+          <TooltipProvider key={index}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <Link
+                  to={route.path}
+                  className={`flex items-center justify-center transition-colors rounded-lg h-9 w-9 text-muted-foreground hover:text-foreground md:h-8 md:w-8 ${
+                    currentPage === route.name && 'bg-accent text-accent-foreground'
+                  }`}
+                  onClick={() => handlePageClick(route.name)}
+                >
+                  {route.icon}
+                  <span className="sr-only">{route.name}</span>
+                </Link>
+              </TooltipTrigger>
+              <TooltipContent side="right">{route.name}</TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+        ))}
+      </nav>
+    </aside>
       {/* </div> */}
 
       {/* Side Bar */}
-
-        
-      <div className="w-5/6 md:hidden">
-        {/* <Image
-          src="/examples/dashboard-light.png"
-          width={1280}
-          height={866}
-          alt="Dashboard"
-          className="block dark:hidden"
-        />
-        <Image
-          src="/examples/dashboard-dark.png"
-          width={1280}
-          height={866}
-          alt="Dashboard"
-          className="hidden dark:block"
-        /> */}
-      </div>
-      <div className="flex-col hidden w-5/6 h-screen md:flex">
+      {
+        currentPage === 'Dashboard' &&        
+      <div className="flex-col hidden w-[90vw] h-screen md:flex">
         <div className="border-b ">
           <div className="flex items-center h-16 px-4 ">
             <TeamSwitcher />
@@ -349,7 +278,15 @@ export default function DashboardPage() {
           </Tabs>
         </div>
       </div>
-    </>
+      }
+      {
+        currentPage === 'Bots' && 
+    <Stepper/>
+
+      }
+
+
+</div>
   );
 }
 
