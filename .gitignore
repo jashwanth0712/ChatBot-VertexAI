@@ -1,0 +1,5 @@
+scraped_html
+server/db.sqlite3
+__pycache__
+node_modules
+
