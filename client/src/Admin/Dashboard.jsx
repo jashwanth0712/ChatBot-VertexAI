@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button.jsx";
 import Stepper from '../Admin/input_page.jsx'
 import { useState } from "react";
+import MobileMockup from "./MobileMockup.jsx";
 // import { Package2 } from "react-icons/fi";
 import {
   Card,

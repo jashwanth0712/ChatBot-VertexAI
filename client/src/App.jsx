@@ -1,17 +1,4 @@
-import { Button } from './components/ui/button'
 import Dashboard from './Admin/Dashboard'
-import {
-  AlertDialog,
-  AlertDialogAction,
-  AlertDialogCancel,
-  AlertDialogContent,
-  AlertDialogDescription,
-  AlertDialogFooter,
-  AlertDialogHeader,
-  AlertDialogTitle,
-  AlertDialogTrigger,
-} from "@/components/ui/alert-dialog"
-
 
 function App() {
   // className='flex items-center justify-center h-screen'
