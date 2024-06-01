@@ -18,9 +18,12 @@ export default function StepperDemo() {
 				{steps.map((stepProps, index) => {
 					return (
 						<Step key={stepProps.label} {...stepProps}>
-							{!<GeneralInfo/>}
+							{/* {!<GeneralInfo/>}
 							{!<Knowledge/>}
-							{<Personality/>}
+							{<Personality/>} */}
+							{/* {isFirstStep && (<GeneralInfo/>)}
+							{isSecondStep && (<Knowledge/>)}
+							{isLastStep && (<Personality/>)} */}
 						</Step>
 					);
 				})}
@@ -36,15 +39,20 @@ const Footer = () => {
 		prevStep,
 		resetSteps,
 		hasCompletedAllSteps,
+		isFirstStep,
+		isSecondStep,
 		isLastStep,
 		isOptionalStep,
 		isDisabledStep,
 	} = useStepper();
 	return (
-		<>
+		<>	
+			{isFirstStep && (<GeneralInfo/>)}
+			{isSecondStep && (<Knowledge/>)}
+			{isLastStep && (<Personality/>)}
 			{hasCompletedAllSteps && (
 				<div className="h-40 flex items-center justify-center my-2 border bg-secondary text-primary rounded-md">
-					<h1 className="text-xl">Woohoo! All steps completed! 🎉</h1>
+					<h1 className="text-xl">You are ready to go!!! 🎉</h1>
 				</div>
 			)}
 			<div className="w-full flex justify-end gap-2">

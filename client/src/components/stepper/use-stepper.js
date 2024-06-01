@@ -20,6 +20,8 @@ export function useStepper() {
 
 	const { children, className, ...rest } = context;
 
+	const isFirstStep = context.activeStep === context.steps.length - 3
+	const isSecondStep = context.activeStep === context.steps.length - 2;
 	const isLastStep = context.activeStep === context.steps.length - 1;
 	const hasCompletedAllSteps = context.activeStep === context.steps.length;
 
@@ -33,6 +35,8 @@ export function useStepper() {
 	return {
 		...rest,
 		isLastStep,
+		isFirstStep,
+		isSecondStep,
 		hasCompletedAllSteps,
 		isOptionalStep,
 		isDisabledStep,
