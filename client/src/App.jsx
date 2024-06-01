@@ -8,14 +8,17 @@ class App extends React.Component {
     isAuthenticated: false, // Initially user is not authenticated
   };
 
+      
+
   render() {
     const { isAuthenticated } = this.state;
 
     return (
         <div>
-          {/* <Dashboard isAuthenticated={isAuthenticated} /> Pass isAuthenticated to Dashboard component */}
-              {isAuthenticated ? <EmailList /> : <Signin />} {/* Render EmailList component if authenticated, otherwise render Signin */}
-              <Signin /> {/* Render Signin component for all other routes */}
+        <Routes>
+          <Route path="/" element={<Signin/>}/>
+          <Route path="/Dashboard" element={<Dashboard/>}/>
+        </Routes>
         </div>
     );
   }
