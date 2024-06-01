@@ -6,6 +6,7 @@ import Stepper from '../Admin/input_page.jsx'
 import { useState } from "react";
 import IntegrationsPage from "./Integrations.jsx";
 import MobileMockup from "./MobileMockup.jsx";
+import { SwitchForm } from "@/components/ui/questions.jsx";
 // import { SwitchForm } from "@/components/ui/questions.jsx";
 // import { Package2 } from "react-icons/fi";
 import {
@@ -236,7 +237,7 @@ export default function DashboardPage() {
                     <CardTitle>Overview</CardTitle>
                   </CardHeader>
                   <CardContent className="pl-7">
-                    {/* <SwitchForm/> */}
+                    <SwitchForm/>
                   </CardContent>
                 </Card>
                 {/* <Card className="col-span-3">

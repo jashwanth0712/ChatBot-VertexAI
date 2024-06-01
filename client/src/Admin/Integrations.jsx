@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 import Gmail_logo from "../../public/gmail_icon.png";
+import meet_logo from "../../public/meet_icon.png"
+import calender_logo from "../../public/calender_icon.png"
+import call_logo from "../../public/call_icon.png"
+import whatsapp_logo from "../../public/whatsapp_icon.png"
+
 import {
   Activity,
   ArrowUpRight,
@@ -51,44 +56,99 @@ import {
 
 export default function IntegrationsPage() {
   return (
-    <div className="flex min-h-screen w-full flex-col md:ml-8">
-      <main className="flex flex-1 flex-col gap-4 p-4 md:gap-8 md:p-8">
+    <div className="flex flex-col w-full min-h-screen md:ml-8">
+      <main className="flex flex-col flex-1 gap-4 p-4 md:gap-8 md:p-8">
         <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-6">
           <Card x-chunk="dashboard-01-chunk-0">
-            <CardHeader className="flex flex-row items-center justify-end space-y-0 pb-2">
+            <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
               <CircleCheck color="#5FD068" />
             </CardHeader>
             <CardContent>
-            <div className="flex justify-center items-center h-full w-full">
+            <div className="flex items-center justify-center w-full h-full">
                 <div className="w-[50%] h-[100%]">
                     <img src={Gmail_logo} alt="Gmail Logo" />
                 </div>
             </div>
             
             </CardContent>
-            <CardTitle className="text-sm justify-center items-center w-full flex font-medium">
+            <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
                 <h1>Gmail Integration</h1>
               </CardTitle>
             
           </Card>
           <Card x-chunk="dashboard-01-chunk-0">
-            <CardHeader className="flex flex-row items-center justify-end space-y-0 pb-2">
+            <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
             <Circle color="#878787"/>
             </CardHeader>
             <CardContent>
-            <div className="flex justify-center items-center h-full w-full">
+            <div className="flex items-center justify-center w-full h-full">
                 <div className="w-[50%] h-[100%]">
-                    <img src={Gmail_logo} alt="Gmail Logo" />
+                    <img src={calender_logo} alt="Gmail Logo" />
                 </div>
             </div>
             
             </CardContent>
-            <CardTitle className="text-sm justify-center items-center w-full flex font-medium">
-                <h1>Gmail Integration</h1>
+            <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
+                <h1>Calender Integration</h1>
               </CardTitle>
             
           </Card>
-            <Card>
+
+          <Card x-chunk="dashboard-01-chunk-0">
+            <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
+            <Circle color="#878787"/>
+            </CardHeader>
+            <CardContent>
+            <div className="flex items-center justify-center w-full h-full">
+                <div className="w-[50%] h-[100%]">
+                    <img src={whatsapp_logo} alt="Gmail Logo" />
+                </div>
+            </div>
+            
+            </CardContent>
+            <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
+                <h1>whatsapp Integration</h1>
+              </CardTitle>
+            
+          </Card>
+
+          <Card x-chunk="dashboard-01-chunk-0">
+            <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
+            <Circle color="#878787"/>
+            </CardHeader>
+            <CardContent>
+            <div className="flex items-center justify-center w-full h-full">
+                <div className="w-[50%] h-[100%]">
+                    <img src={meet_logo} alt="Gmail Logo" />
+                </div>
+            </div>
+            
+            </CardContent>
+            <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
+                <h1>Gmeet Integration</h1>
+              </CardTitle>
+            
+          </Card>
+
+          <Card x-chunk="dashboard-01-chunk-0">
+            <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
+            <Circle color="#878787"/>
+            </CardHeader>
+            <CardContent>
+            <div className="flex items-center justify-center w-full h-full">
+                <div className="w-[50%] h-[100%]">
+                    <img src={call_logo} alt="Gmail Logo" />
+                </div>
+            </div>
+            
+            </CardContent>
+            <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
+                <h1>Call Integration</h1>
+              </CardTitle>
+            
+          </Card>
+          
+            {/* <Card>
             <CardHeader className="pb-2">
                 <CardDescription>This Week</CardDescription>
                 <CardTitle className="text-4xl">$1,329</CardTitle>
@@ -99,12 +159,12 @@ export default function IntegrationsPage() {
             <CardFooter>
                 <Progress value={25} aria-label="25% increase" />
             </CardFooter>
-            </Card>
+            </Card> */}
 
-          <Card x-chunk="dashboard-01-chunk-2">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+          {/* <Card x-chunk="dashboard-01-chunk-2">
+            <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium">Sales</CardTitle>
-              <CreditCard className="h-4 w-4 text-muted-foreground" />
+              <CreditCard className="w-4 h-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">+12,234</div>
@@ -114,9 +174,9 @@ export default function IntegrationsPage() {
             </CardContent>
           </Card>
           <Card x-chunk="dashboard-01-chunk-3">
-            <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">
+            <CardHeader className="flex flex-row items-center justify-between pb-2 space-y-0">
               <CardTitle className="text-sm font-medium">Active Now</CardTitle>
-              <Activity className="h-4 w-4 text-muted-foreground" />
+              <Activity className="w-4 h-4 text-muted-foreground" />
             </CardHeader>
             <CardContent>
               <div className="text-2xl font-bold">+573</div>
@@ -124,7 +184,7 @@ export default function IntegrationsPage() {
                 +201 since last hour
               </p>
             </CardContent>
-          </Card>
+          </Card> */}
         </div>
         <div className="grid gap-4 md:gap-8 lg:grid-cols-2 xl:grid-cols-3">
           <Card
@@ -137,10 +197,10 @@ export default function IntegrationsPage() {
                     you have 15 unread Important emails
                 </CardDescription>
               </div>
-              <Button asChild size="sm" className="ml-auto gap-1">
+              <Button asChild size="sm" className="gap-1 ml-auto">
                 <Link href="#">
                   View All
-                  <ArrowUpRight className="h-4 w-4" />
+                  <ArrowUpRight className="w-4 h-4" />
                 </Link>
               </Button>
             </CardHeader>
