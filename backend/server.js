@@ -1,19 +1,23 @@
-require('dotenv').config(); // Load environment variables from .env file
-
 const express = require('express');
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const { google } = require('googleapis');
-const nodemailer = require('nodemailer');
+const session = require('express-session');
+const cors = require('cors');
+
+require('dotenv').config(); // Load environment variables from .env file
 
 const app = express();
-const session = require('express-session');
+
+// CORS middleware
+app.use(cors());
 
 app.use(session({
   secret: 'your_secret_key',
   resave: false,
   saveUninitialized: false
 }));
+
 // Passport configuration
 passport.use(new GoogleStrategy({
     clientID: process.env.GOOGLE_CLIENT_ID,
@@ -22,6 +26,8 @@ passport.use(new GoogleStrategy({
   },
   (accessToken, refreshToken, profile, done) => {
     // You can save the user profile to your database here
+     profile.accessToken = accessToken; // Add access token to profile
+    profile.refreshToken = refreshToken;
     return done(null, profile);
   }
 ));
@@ -41,25 +47,26 @@ app.use(passport.initialize());
 
 // Routes
 app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email'] })
+  passport.authenticate('google', { scope: ['profile', 'email', 'https://www.googleapis.com/auth/gmail.readonly'] })
+
 );
 
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
-    // Authentication successful, redirect to the page to retrieve emails
-    req.session.accessToken = req.user.accessToken;
-    req.session.refreshToken = req.user.refreshToken;
-    res.redirect('http://localhost:5173');
+    // Redirect with tokens as query parameters
+    res.redirect(`http://localhost:5173/emails/?accessToken=${req.user.accessToken}&refreshToken=${req.user.refreshToken}`);
   }
 );
 
+
 // Retrieve emails
 app.get('/emails', (req, res) => {
+  const accessToken = req.headers.authorization.split(' ')[1]; // Extract access token from request header
   const oauth2Client = new google.auth.OAuth2();
+  console.log("user session recieved ",accessToken)
   oauth2Client.setCredentials({
-    access_token: req.user.accessToken,
-    refresh_token: req.user.refreshToken
+    access_token: accessToken,
   });
 
   const gmail = google.gmail({ version: 'v1', auth: oauth2Client });
