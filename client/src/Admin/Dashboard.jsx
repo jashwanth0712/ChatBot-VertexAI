@@ -4,8 +4,9 @@ import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button.jsx";
 import Stepper from '../Admin/input_page.jsx'
 import { useState } from "react";
+import IntegrationsPage from "./Integrations.jsx";
 import MobileMockup from "./MobileMockup.jsx";
-import { SwitchForm } from "@/components/ui/questions.jsx";
+// import { SwitchForm } from "@/components/ui/questions.jsx";
 // import { Package2 } from "react-icons/fi";
 import {
   Card,
@@ -47,6 +48,7 @@ import {
   MoreVertical,
   Package,
   Package2,
+  Blocks, 
   PanelLeft,
   BotMessageSquare,
   Settings,
@@ -73,7 +75,7 @@ export default function DashboardPage() {
   const routes = [
     { name: 'Dashboard', icon: <Home className="w-5 h-5" />, path: '#' },
     { name: 'Bots', icon: <BotMessageSquare className="w-5 h-5"/>, path: '#' },
-    // { name: 'Products', icon: <Package className="w-5 h-5" />, path: '#' },
+    { name: 'Integrations', icon: <Blocks  className="w-5 h-5" />, path: '#' },
     // { name: 'Customers', icon: <Users2 className="w-5 h-5" />, path: '#' },
     // { name: 'Analytics', icon: <LineChart className="w-5 h-5" />, path: '#' },
     // { name: 'Settings', icon: <Settings className="w-5 h-5" />, path: '#' },
@@ -234,7 +236,7 @@ export default function DashboardPage() {
                     <CardTitle>Overview</CardTitle>
                   </CardHeader>
                   <CardContent className="pl-7">
-                    <SwitchForm/>
+                    {/* <SwitchForm/> */}
                   </CardContent>
                 </Card>
                 {/* <Card className="col-span-3">
@@ -257,6 +259,11 @@ export default function DashboardPage() {
       {
         currentPage === 'Bots' && 
     <Stepper/>
+
+      }
+      {
+        currentPage === 'Integrations' && 
+        <IntegrationsPage/>
 
       }
 

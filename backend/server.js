@@ -4,6 +4,18 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const { google } = require('googleapis');
 const session = require('express-session');
 const cors = require('cors');
+// app.js
+const User = require('./models/user');
+
+const mongoose = require('mongoose');
+
+// Replace `<username>`, `<password>`, and `<yourclustername>` with your actual MongoDB Atlas credentials
+const uri = "mongodb+srv://jashwanth0712:123456789abc@cluster.6wpbumf.mongodb.net/"
+
+mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => console.log('Connected to MongoDB Atlas'))
+  .catch(err => console.error('Error connecting to MongoDB Atlas:', err));
+
 
 require('dotenv').config(); // Load environment variables from .env file
 
@@ -18,19 +30,36 @@ app.use(session({
   saveUninitialized: false
 }));
 
-// Passport configuration
+
+// Inside Passport callback
 passport.use(new GoogleStrategy({
-    clientID: process.env.GOOGLE_CLIENT_ID,
-    clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-    callbackURL: '/auth/google/callback'
-  },
-  (accessToken, refreshToken, profile, done) => {
-    // You can save the user profile to your database here
-     profile.accessToken = accessToken; // Add access token to profile
-    profile.refreshToken = refreshToken;
-    return done(null, profile);
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+  callbackURL: '/auth/google/callback'
+  // Strategy configuration...
+}, async (accessToken, refreshToken, profile, done) => {
+  try {
+    let user = await User.findOne({ email: profile.emails[0].value });
+
+    if (!user) {
+      user = new User({
+        email: profile.emails[0].value,
+        accessToken,
+        firstName: profile.name.givenName,
+        lastName: profile.name.familyName
+      });
+      await user.save();
+    } else {
+      user.accessToken = accessToken;
+      await user.save();
+    }
+
+    return done(null, user);
+  } catch (err) {
+    return done(err);
   }
-));
+}));
+
 
 // Serialize user
 passport.serializeUser((user, done) => {
@@ -54,7 +83,6 @@ app.get('/auth/google',
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
-    //TODO:[Dhanvanth] on signin store the access token and mail in Mongodb
     // Redirect with tokens as query parameters
     res.redirect(`http://localhost:5173/emails/?accessToken=${req.user.accessToken}&refreshToken=${req.user.refreshToken}`);
   }
@@ -108,7 +136,6 @@ const fetchEmails = (accessToken, numberOfEmails) => {
 const formatEmails = (emails) => {
   return emails.map(email => {
     const headers = email.payload.headers;
-    console.log("headers are : ",headers)
     const subject = headers.find(header => header.name === 'Subject').value;
     const from = headers.find(header => header.name === 'From').value;
     const to = headers.find(header => header.name === 'To').value;
