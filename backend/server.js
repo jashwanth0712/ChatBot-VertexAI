@@ -4,20 +4,19 @@ const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const { google } = require('googleapis');
 const session = require('express-session');
 const cors = require('cors');
-// app.js
+const cron = require('node-cron');
+const printHi = require('./cronFunction');
 const User = require('./models/user');
+require('dotenv').config(); // Load environment variables from .env file
 
 const mongoose = require('mongoose');
+cron.schedule('*/600 * * * * *', printHi);
 
-// Replace `<username>`, `<password>`, and `<yourclustername>` with your actual MongoDB Atlas credentials
-const uri = "mongodb+srv://jashwanth0712:123456789abc@cluster.6wpbumf.mongodb.net/"
-
-mongoose.connect(uri, { useNewUrlParser: true, useUnifiedTopology: true })
+mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB Atlas'))
   .catch(err => console.error('Error connecting to MongoDB Atlas:', err));
 
 
-require('dotenv').config(); // Load environment variables from .env file
 
 const app = express();
 
