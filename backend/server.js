@@ -54,6 +54,7 @@ app.get('/auth/google',
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
+    //TODO:[Dhanvanth] on signin store the access token and mail in Mongodb
     // Redirect with tokens as query parameters
     res.redirect(`http://localhost:5173/emails/?accessToken=${req.user.accessToken}&refreshToken=${req.user.refreshToken}`);
   }
@@ -107,6 +108,7 @@ const fetchEmails = (accessToken, numberOfEmails) => {
 const formatEmails = (emails) => {
   return emails.map(email => {
     const headers = email.payload.headers;
+    console.log("headers are : ",headers)
     const subject = headers.find(header => header.name === 'Subject').value;
     const from = headers.find(header => header.name === 'From').value;
     const to = headers.find(header => header.name === 'To').value;
