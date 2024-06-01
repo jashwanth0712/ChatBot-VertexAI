@@ -43,6 +43,7 @@ class EmailList extends React.Component {
           Authorization: `Bearer ${localStorage.getItem('accessToken')}`, // Send access token in the request header
         },
       });
+      console.log("emails recieved ",response.data)
       this.setState({ emails: response.data, loading: false });
     } catch (error) {
       console.error('Error fetching emails:', error);
