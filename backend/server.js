@@ -79,7 +79,51 @@ app.get('/auth/google',
   passport.authenticate('google', { scope: ['profile', 'email', 'https://www.googleapis.com/auth/gmail.readonly'] ,accessType: 'offline', prompt: 'consent'})
 
 );
+app.get('/',(req,res)=>{
+  res.send("hello");
+}
+);
+const m=[
+  {
+      "subject": "New comment in Season of AI",
+      "from": "XMonkeys360 <info@meetup.com>",
+      "to": "cs20b1007@iiitdm.ac.in",
+      "cc": null,
+      "body": "Meetup New Comments Season of AI with XMonkeys360 See 1 earlier comment Anbu Mani 2:06 PM Yes, Sorry for the inconvenience Like · Reply View conversation on Meetup Never miss a last-minute change. Get"
+  },
+  {
+      "subject": "Become a part of Tech Affairs - Recruitment",
+      "from": "SAC-Technical Affairs <technical.affairs@iiitdm.ac.in>",
+      "to": "Students of IIITDM <students@iiitdm.ac.in>",
+      "cc": "Dean Student Affairs <dean-sa@iiitdm.ac.in>, pic-technical@iiitdm.ac.in",
+      "body": "Warm Greetings, Moving forward to the new academic year 2024-25, we are glad to share that the Technical Affairs team is scaling up, and we are looking to get onboard with keen and dedicated people"
+  },
+  {
+      "subject": "10% off with 6Exclusive Fare 💰",
+      "from": "IndiGo <mailers@marketing.goindigo.in>",
+      "to": "<cs20b1007@iiitdm.ac.in>",
+      "cc": null,
+      "body": "Book on IndiGo&#39;s web or app now 📱 If you are unable to view this message correctly, click here 6E Rewards | Get Inspired | Hello 6E | Super 6E | Web Check-in Top Destinations | Travel International"
+  },
+  {
+      "subject": "1000 students applied for these jobs in the last 1 hour!",
+      "from": "Team Unstop <noreply@jobs.unstop.news>",
+      "to": "cs20b1007@iiitdm.ac.in",
+      "cc": null,
+      "body": "Tap here to apply! ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿ ͏ ﻿"
+  },
+  {
+      "subject": "New comment in Season of AI",
+      "from": "XMonkeys360 <info@meetup.com>",
+      "to": "cs20b1007@iiitdm.ac.in",
+      "cc": null,
+      "body": "Meetup New Comments Season of AI with XMonkeys360 Vivek Dharmarajan 11:34 PM Have we moved the meetup to Jun 29? Like · Reply View conversation on Meetup Never miss a last-minute change. Get the app."
+  }
+]
 
+app.get("/mails",(req,res)=>{
+  res.send(m)
+})
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
