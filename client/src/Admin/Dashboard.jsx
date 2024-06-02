@@ -83,7 +83,7 @@ export default function DashboardPage() {
     // { name: 'Settings', icon: <Settings className="w-5 h-5" />, path: '#' },
   ];
   return (
-    <div className="md:flex justify-center w-[100vw]">
+    <div className="md:flex justify-center w-[70vw]">
 
         {/* Side Bar */}
       {/* <div className="flex flex-col w-1/6 min-h-screen bg-muted/40"> */}

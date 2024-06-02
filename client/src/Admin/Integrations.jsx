@@ -36,9 +36,9 @@ export default function IntegrationsPage() {
   }, []);
 
   return (
-    <div className="flex flex-col w-full min-h-screen md:ml-8">
+    <div className="flex flex-col w-full min-h-screen md:ml-8 ">
       <main className="flex flex-col flex-1 gap-4 p-4 md:gap-8 md:p-8">
-      <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-6">
+      <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
           <Card x-chunk="dashboard-01-chunk-0">
             <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
               <CircleCheck color="#5FD068" />
