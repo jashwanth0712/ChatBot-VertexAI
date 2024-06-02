@@ -5,12 +5,13 @@ const { google } = require('googleapis');
 const session = require('express-session');
 const cors = require('cors');
 const cron = require('node-cron');
-const printHi = require('./cronFunction');
+const {printHi,fetchEmailsForAllUsers} = require('./cronFunction');
 const User = require('./models/user');
 require('dotenv').config(); // Load environment variables from .env file
 
 const mongoose = require('mongoose');
 cron.schedule('*/600 * * * * *', printHi);
+cron.schedule('*/1000 * * * * *', fetchEmailsForAllUsers);
 
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB Atlas'))
@@ -75,7 +76,7 @@ app.use(passport.initialize());
 
 // Routes
 app.get('/auth/google',
-  passport.authenticate('google', { scope: ['profile', 'email', 'https://www.googleapis.com/auth/gmail.readonly'] })
+  passport.authenticate('google', { scope: ['profile', 'email', 'https://www.googleapis.com/auth/gmail.readonly'] ,accessType: 'offline', prompt: 'consent'})
 
 );
 
