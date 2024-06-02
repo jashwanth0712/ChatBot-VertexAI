@@ -124,6 +124,9 @@ const m=[
 app.get("/mails",(req,res)=>{
   res.send(m)
 })
+app.post("/mails",(req,res)=>{
+  res.send(m)
+})
 app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
