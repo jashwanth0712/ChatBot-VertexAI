@@ -5,6 +5,14 @@ import calender_logo from "../../public/calender_icon.png"
 import call_logo from "../../public/call_icon.png"
 import whatsapp_logo from "../../public/whatsapp_icon.png"
 import Gmail_cards from "./gmail_cards.jsx"
+import CalendarCards from "./Calender_Cards.jsx"
+import CallCards from "./call_cards.jsx"
+import MeetCards from "./meet_cards.jsx"
+import WhatsappCards from "./whatsappCards.jsx"
+
+// import Gmail_cards from "./gmail_cards.jsx"
+// import Gmail_cards from "./gmail_cards.jsx"
+// import Gmail_cards from "./gmail_cards.jsx"
 import {
   Activity,
   ArrowUpRight,
@@ -135,7 +143,7 @@ const options = {
 
 export default function AnalyticsPage() {
 
-  const [selectedFramework, setSelectedFramework] = React.useState("");
+  const [selectedFramework, setSelectedFramework] = React.useState("gmail");
   
   const data = {
     labels: ['Food', 'Apparels', 'Electronics', 'Household'],
@@ -275,13 +283,30 @@ export default function AnalyticsPage() {
       <main className="flex flex-col flex-1 gap-4 p-4 md:gap-8 md:p-8">
         <Combobox  value={selectedFramework} setValue={setSelectedFramework}/>
         <div>
+          
         {!selectedFramework&&
-          <h1>nothing</h1>
+          <Gmail_cards/>
         }
 
         {
           selectedFramework=="gmail"&&
           <Gmail_cards/>
+        }
+        {
+          selectedFramework=="calender"&&
+          <CalendarCards/>
+        }
+        {
+          selectedFramework=="gmeet"&&
+          <MeetCards/>
+        }
+        {
+          selectedFramework=="call"&&
+          <CallCards/>
+        }
+        {
+          selectedFramework=="whatsapp"&&
+          <WhatsappCards/>
         }
              
         </div>
