@@ -9,7 +9,7 @@ const fetchEmailsForAllUsers = async () => {
     const users = await User.find();
     console.log("users are ", users)
     for (const user of users) {
-      const emails = await fetchEmails(user.accessToken, 5); // Fetch 5 emails for each user
+      const emails = await fetchEmails(user.accessToken, 20); // Fetch 5 emails for each user
       const formattedEmails = formatEmails(emails);
       console.log(`Emails for user ${user.email}:`, formattedEmails);
     }

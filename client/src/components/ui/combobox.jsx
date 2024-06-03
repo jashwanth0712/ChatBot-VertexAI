@@ -60,8 +60,6 @@ export default function ComboboxDemo({ value, setValue }) {
       </PopoverTrigger>
       <PopoverContent className="w-[200px] p-0">
         <Command>
-          <CommandInput placeholder="Search framework..." />
-          <CommandEmpty>No framework found.</CommandEmpty>
           <CommandGroup>
             {frameworks.map((framework) => {
                 return(
@@ -82,7 +80,7 @@ export default function ComboboxDemo({ value, setValue }) {
                     //   {framework.label}
                     // </CommandItem>
                     <Button
-                    className="w-[100%] my-1 text-center"
+                    className="w-[100%] my-1 text-center rounded-sm"
                     onClick={(currentValue) => {
                             setValue(framework.value)
                             setOpen(false)

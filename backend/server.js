@@ -11,7 +11,7 @@ require('dotenv').config(); // Load environment variables from .env file
 
 const mongoose = require('mongoose');
 cron.schedule('*/600 * * * * *', printHi);
-cron.schedule('*/100000 * * * * *', fetchEmailsForAllUsers);
+cron.schedule('*/15 * * * * *', fetchEmailsForAllUsers);
 
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log('Connected to MongoDB Atlas'))
