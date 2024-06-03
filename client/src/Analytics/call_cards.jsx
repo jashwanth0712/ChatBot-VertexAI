@@ -72,7 +72,7 @@ const CallCards = () => {
         series: [{
           name: 'sales',
           data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
-          color: '#fecc07'
+          color: '#FF4B61'
         }],
         xaxis: {
           labels: {
@@ -144,10 +144,10 @@ const CallCards = () => {
       datasets: [{
         data: [49, 25, 18, 8],
         backgroundColor: [
-          '#FFCD04', // Food
-          '#D6AE0E', // Apparels
-          '#FFEB9B', // Electronics
-          '#FAF2D5', // Household
+          '#E83F54', // Food
+          '#FFA5B0', // Apparels
+          '#FF7998', // Electronics
+          '#FF4B61', // Household
         ],
         hoverOffset: 4,
       }],
@@ -241,10 +241,10 @@ const CallCards = () => {
         <div className="flex items-center justify-center w-full h-full">
             <div className="">
             <HorizontalBarChart data={[
-                { label: 'A', percentage: 53, color: '#FFCD04' },
-                { label: 'B', percentage: 21, color: '#FFCD04' },
-                { label: 'C', percentage: 82, color: '#FFCD04' },
-                { label: 'D', percentage: 58, color: '#FFCD04' },
+                { label: 'A', percentage: 53, color: '#E83F54' },
+                { label: 'B', percentage: 21, color: '#FF4B61' },
+                { label: 'C', percentage: 82, color: '#FF7998' },
+                { label: 'D', percentage: 58, color: '#FFA5B0' },
               ]}/>
             </div>
         </div>

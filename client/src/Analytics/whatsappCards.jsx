@@ -72,7 +72,7 @@ const WhatsappCards = () => {
         series: [{
           name: 'sales',
           data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
-          color: '#fecc07'
+          color: '#335FFF'
         }],
         xaxis: {
           labels: {
@@ -144,10 +144,10 @@ const WhatsappCards = () => {
       datasets: [{
         data: [49, 25, 18, 8],
         backgroundColor: [
-          '#FFCD04', // Food
-          '#D6AE0E', // Apparels
-          '#FFEB9B', // Electronics
-          '#FAF2D5', // Household
+          '#335FFF', // Food
+          '#CCD7FF', // Apparels
+          '#5B7EFF', // Electronics
+          '#657ED6', // Household
         ],
         hoverOffset: 4,
       }],
@@ -241,10 +241,10 @@ const WhatsappCards = () => {
         <div className="flex items-center justify-center w-full h-full">
             <div className="">
             <HorizontalBarChart data={[
-                { label: 'A', percentage: 53, color: '#FFCD04' },
-                { label: 'B', percentage: 21, color: '#FFCD04' },
-                { label: 'C', percentage: 82, color: '#FFCD04' },
-                { label: 'D', percentage: 58, color: '#FFCD04' },
+                { label: 'A', percentage: 53, color: '#335FFF' },
+                { label: 'B', percentage: 21, color: '#335FFF' },
+                { label: 'C', percentage: 82, color: '#335FFF' },
+                { label: 'D', percentage: 58, color: '#335FFF' },
               ]}/>
             </div>
         </div>
