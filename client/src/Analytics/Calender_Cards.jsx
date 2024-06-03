@@ -72,7 +72,7 @@ const CalendarCards = () => {
         series: [{
           name: 'sales',
           data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
-          color: '#fecc07'
+          color: '#309E74'
         }],
         xaxis: {
           labels: {
@@ -144,10 +144,10 @@ const CalendarCards = () => {
       datasets: [{
         data: [49, 25, 18, 8],
         backgroundColor: [
-          '#FFCD04', // Food
-          '#D6AE0E', // Apparels
-          '#FFEB9B', // Electronics
-          '#FAF2D5', // Household
+          '#66DAAE', // Food
+          '#30956F', // Apparels
+          '#E5EBFF', // Electronics
+          '#309E74', // Household
         ],
         hoverOffset: 4,
       }],
@@ -240,7 +240,13 @@ const CalendarCards = () => {
         <CardContent>
         <div className="flex items-center justify-center w-full h-full">
             <div className="">
-                <HorizontalBarChart/>
+                <HorizontalBarChart data={[
+                  { label: 'A', percentage: 73, color: '#309E74' },
+                  { label: 'B', percentage: 61, color: '#309E74' },
+                  { label: 'C', percentage: 42, color: '#309E74' },
+                  { label: 'D', percentage: 18, color: '#309E74' },
+                ]}/>
+                
             </div>
         </div>
         

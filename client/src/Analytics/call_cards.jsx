@@ -240,7 +240,12 @@ const CallCards = () => {
         <CardContent>
         <div className="flex items-center justify-center w-full h-full">
             <div className="">
-                <HorizontalBarChart/>
+            <HorizontalBarChart data={[
+                { label: 'A', percentage: 53, color: '#FFCD04' },
+                { label: 'B', percentage: 21, color: '#FFCD04' },
+                { label: 'C', percentage: 82, color: '#FFCD04' },
+                { label: 'D', percentage: 58, color: '#FFCD04' },
+              ]}/>
             </div>
         </div>
         

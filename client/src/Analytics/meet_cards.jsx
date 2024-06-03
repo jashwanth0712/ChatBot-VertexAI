@@ -72,7 +72,7 @@ const MeetCards = () => {
         series: [{
           name: 'sales',
           data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
-          color: '#fecc07'
+          color: '#905CD6'
         }],
         xaxis: {
           labels: {
@@ -144,9 +144,9 @@ const MeetCards = () => {
       datasets: [{
         data: [49, 25, 18, 8],
         backgroundColor: [
-          '#FFCD04', // Food
-          '#D6AE0E', // Apparels
-          '#FFEB9B', // Electronics
+          '#905CD6', // Food
+          '#C7ADEB', // Apparels
+          '#E3D6F5', // Electronics
           '#FAF2D5', // Household
         ],
         hoverOffset: 4,
@@ -240,7 +240,12 @@ const MeetCards = () => {
         <CardContent>
         <div className="flex items-center justify-center w-full h-full">
             <div className="">
-                <HorizontalBarChart/>
+            <HorizontalBarChart data={[
+                { label: 'A', percentage: 53, color: '#905CD6' },
+                { label: 'B', percentage: 21, color: '#905CD6' },
+                { label: 'C', percentage: 82, color: '#905CD6' },
+                { label: 'D', percentage: 58, color: '#905CD6' },
+              ]}/>
             </div>
         </div>
         
