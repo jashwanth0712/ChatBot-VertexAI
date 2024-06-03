@@ -17,6 +17,8 @@ import {
   Package2,
   Search,
   Users,
+  UserRound,
+  EllipsisVertical
 } from "lucide-react"
 import { Progress } from "@/components/ui/progress"
 
@@ -192,89 +194,270 @@ const CallCards = () => {
     };
   
     return(
-      <div className="grid gap-4 md:grid-cols-2 md:gap-3 lg:grid-cols-4">
-      <Card  x-chunk="dashboard-01-chunk-0" className="h-[250px]  bg-[191919] border-none">
-        <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
-        </CardHeader>
-        <CardContent>
-        <div className="flex items-center justify-center ">
-            <div className="h-[120px] w-[120px]">
-            <Doughnut 
-              data={data} 
-              options={options} 
-              height={60}
-              width={60}
-              />
-            </div>
-        </div>
+      <div className="pl-7">
+        <div className="grid gap-4 md:grid-cols-2 md:gap-3 lg:grid-cols-4">
+          
+        <Card  x-chunk="dashboard-01-chunk-0" className="h-[250px]  bg-[191919] border-none">
+          <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
+          </CardHeader>
+          <CardContent>
+          <div className="flex items-center justify-center ">
+              <div className="h-[120px] w-[120px]">
+              <Doughnut 
+                data={data} 
+                options={options} 
+                height={60}
+                width={60}
+                />
+              </div>
+          </div>
+          
+          </CardContent>
+          <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
+              <h1>Call categories</h1>
+            </CardTitle>
+          
+        </Card>
+        <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[191919] border-none">
+          <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
         
-        </CardContent>
-        <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
-            <h1>Call categories</h1>
-          </CardTitle>
+          </CardHeader>
+          <CardContent>
+          <div className="flex items-center justify-center w-full h-full">
+              <div>
+              <MyChart />
+    
+              </div>
+          </div>
+          
+          </CardContent>
+          <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
+              <h1>Call Interactions</h1>
+            </CardTitle>
+          
+        </Card>
+    
+        <Card x-chunk="dashboard-01-chunk-0 " className="h-[250px]  bg-[191919] border-none">
+          <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
+          
+          </CardHeader>
+          <CardContent>
+          <div className="flex items-center justify-center w-full h-full">
+              <div className="">
+              <HorizontalBarChart data={[
+                  { label: 'A', percentage: 53, color: '#E83F54' },
+                  { label: 'B', percentage: 21, color: '#FF4B61' },
+                  { label: 'C', percentage: 82, color: '#FF7998' },
+                  { label: 'D', percentage: 58, color: '#FFA5B0' },
+                ]}/>
+              </div>
+          </div>
+          
+          </CardContent>
+          <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
+              <h1>Call Follow-ups</h1>
+            </CardTitle>
+          
+        </Card>
+        <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[191919] border-none">
+          <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
+        
+          </CardHeader>
+          <CardContent>
+          <div className="flex items-center justify-center w-full h-full">
+              <div>
+              <MyChart />
+    
+              </div>
+          </div>
+          
+          </CardContent>
+          <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
+              <h1>Call Active Leads</h1>
+            </CardTitle>
+          
+        </Card>
+    
+                
+    </div>
+    <div className="flex ">
+    <Card  x-chunk="dashboard-01-chunk-0" className=" w-[50vw] mx-3 my-3 border-none p-3  shadow-xl">
+        
+          <div  className="flex flex-row justify-between p-3 ">
+              <div className="flex">
+                <div className="flex flex-col justify-center mr-2"> 
+                 <UserRound />
+                </div>
+                <div>
+                  <h1 className="font-bold my-1"> Important Calls</h1>
+                  <p className="text-[10px] text-[#808281]  bg-gray my-1">Recent Chats</p>
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+                <h2 className="text-10px  underline">See all</h2>
+              </div>
+            </div>
+          
+          
+          
+          <ul>
+            <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+              <div className="flex items-center">
+                <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+                 <UserRound />
+                </div>
+                <div className="mx-2 flex flex-col justify-center">
+                  
+                  <h1 className="font-bold ">Elena Ivanova</h1>
+                  <p className="text-xs text-[#808281] font-bold bg-gray bold ">Business Call</p>
+                 
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+              <EllipsisVertical />
+              </div>
+            </li>
+            <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+              <div className="flex items-center">
+                <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+                 <UserRound />
+                </div>
+                <div className="mx-2 flex flex-col justify-center">
+                  
+                  <h1 className="font-bold ">Marie Wondy</h1>
+                  <p className="text-xs text-[#808281] font-bold bg-gray bold ">Personal Call</p>
+                 
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+              <EllipsisVertical />
+              </div>
+            </li>
+            <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+              <div className="flex items-center">
+                <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+                 <UserRound />
+                </div>
+                <div className="mx-2 flex flex-col justify-center">
+                  
+                  <h1 className="font-bold ">Oscar Jansson</h1>
+                  <p className="text-xs text-[#808281] font-bold bg-gray bold ">Project Discussion</p>
+                 
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+              <EllipsisVertical />
+              </div>
+            </li>
+            <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+              <div className="flex items-center">
+                <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+                 <UserRound />
+                </div>
+                <div className="mx-2 flex flex-col justify-center">
+                  
+                  <h1 className="font-bold ">Nora Jensen</h1>
+                  <p className="text-xs text-[#808281] font-bold bg-gray bold ">Gmeet</p>
+                 
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+              <EllipsisVertical />
+              </div>
+            </li>
+
+          </ul>
+          
+        </Card>
+        <Card  x-chunk="dashboard-01-chunk-0" className=" w-[50vw] mx-3 my-3 border-none p-3  shadow-xl">
+        
+        <div  className="flex flex-row justify-between p-3 ">
+            <div className="flex">
+              <div className="flex flex-col justify-center mr-2"> 
+               <UserRound />
+              </div>
+              <div>
+                <h1 className="font-bold my-1">Normal Calls</h1>
+                <p className="text-[10px] text-[#808281]  bg-gray my-1">Recent Chats</p>
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+              <h2 className="text-10px  underline">See all</h2>
+            </div>
+          </div>
+        
+        
+        
+        <ul>
+          <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+            <div className="flex items-center">
+              <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+               <UserRound />
+              </div>
+              <div className="mx-2 flex flex-col justify-center">
+                
+                <h1 className="font-bold ">Elena Ivanova</h1>
+                <p className="text-xs text-[#808281] font-bold bg-gray bold ">Business Call</p>
+               
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+            <EllipsisVertical />
+            </div>
+          </li>
+          <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+            <div className="flex items-center">
+              <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+               <UserRound />
+              </div>
+              <div className="mx-2 flex flex-col justify-center">
+                
+                <h1 className="font-bold ">Marie Wondy</h1>
+                <p className="text-xs text-[#808281] font-bold bg-gray bold ">Personal Call</p>
+               
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+            <EllipsisVertical />
+            </div>
+          </li>
+          <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+            <div className="flex items-center">
+              <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+               <UserRound />
+              </div>
+              <div className="mx-2 flex flex-col justify-center">
+                
+                <h1 className="font-bold ">Oscar Jansson</h1>
+                <p className="text-xs text-[#808281] font-bold bg-gray bold ">Project Discussion</p>
+               
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+            <EllipsisVertical />
+            </div>
+          </li>
+          <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+            <div className="flex items-center">
+              <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+               <UserRound />
+              </div>
+              <div className="mx-2 flex flex-col justify-center">
+                
+                <h1 className="font-bold ">Nora Jensen</h1>
+                <p className="text-xs text-[#808281] font-bold bg-gray bold ">Gmeet</p>
+               
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+            <EllipsisVertical />
+            </div>
+          </li>
+
+        </ul>
         
       </Card>
-      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[191919] border-none">
-        <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
-       
-        </CardHeader>
-        <CardContent>
-        <div className="flex items-center justify-center w-full h-full">
-            <div>
-            <MyChart />
-  
-            </div>
-        </div>
-        
-        </CardContent>
-        <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
-            <h1>Call Interactions</h1>
-          </CardTitle>
-        
-      </Card>
-  
-      <Card x-chunk="dashboard-01-chunk-0 " className="h-[250px]  bg-[191919] border-none">
-        <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
-        
-        </CardHeader>
-        <CardContent>
-        <div className="flex items-center justify-center w-full h-full">
-            <div className="">
-            <HorizontalBarChart data={[
-                { label: 'A', percentage: 53, color: '#E83F54' },
-                { label: 'B', percentage: 21, color: '#FF4B61' },
-                { label: 'C', percentage: 82, color: '#FF7998' },
-                { label: 'D', percentage: 58, color: '#FFA5B0' },
-              ]}/>
-            </div>
-        </div>
-        
-        </CardContent>
-        <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
-            <h1>Call Follow-ups</h1>
-          </CardTitle>
-        
-      </Card>
-      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[191919] border-none">
-        <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
-       
-        </CardHeader>
-        <CardContent>
-        <div className="flex items-center justify-center w-full h-full">
-            <div>
-            <MyChart />
-  
-            </div>
-        </div>
-        
-        </CardContent>
-        <CardTitle className="flex items-center justify-center w-full text-sm font-medium">
-            <h1>Call Active Leads</h1>
-          </CardTitle>
-        
-      </Card>
-  
-  
+  </div>
   </div>
     )
   }
