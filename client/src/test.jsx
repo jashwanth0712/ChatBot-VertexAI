@@ -25,24 +25,10 @@ class Signin extends React.Component {
   render() {
     return (
       <div className="flex min-h-screen">
-      {/* Left section */}
-      <div className="flex flex-col items-center justify-center flex-1 text-white bg-gray-900">
-        <div className="flex items-center mb-8">
-          <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 20 20">
-            <path
-              fillRule="evenodd"
-              d="M10 18a8 8 0 100-16 8 8 0 000 16zm-2.47-9.12L9.3 9.47a1 1 0 001.4 0l1.77-1.77a1 1 0 111.4 1.42L10 11.41l-3.47-3.47a1 1 0 011.42-1.42l1.58 1.58z"
-              clipRule="evenodd"
-            />
-          </svg>
-          <span className="ml-2 text-2xl font-semibold">Acme Inc</span>
-        </div>
-      </div>
-
-      {/* Right section */}
+         {/* Right section */}
       <div className="flex items-center justify-center flex-1 bg-gray-800">
         <div className="w-full max-w-md p-8 bg-white rounded-lg shadow-lg">
-          <h2 className="mb-4 text-3xl font-bold text-center">Welcome to Acme Inc</h2>
+          <h2 className="mb-4 text-3xl font-bold text-center text-gray-800">Welcome to Jarvis</h2>
           <p className="mb-6 text-center text-gray-600">
             Sign in with your email or Google account to continue.
           </p>
@@ -73,6 +59,10 @@ class Signin extends React.Component {
           </div>
         </div>
       </div>
+      {/* Left section */}
+      
+
+     
     </div>
     );
   }

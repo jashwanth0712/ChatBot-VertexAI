@@ -80,6 +80,7 @@ export default function ComboboxDemo({ value, setValue }) {
                     //   {framework.label}
                     // </CommandItem>
                     <Button
+                    variant="ghost"
                     className="w-[100%] my-1 text-center rounded-sm"
                     onClick={(currentValue) => {
                             setValue(framework.value)

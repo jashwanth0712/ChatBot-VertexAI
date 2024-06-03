@@ -25,6 +25,7 @@ import {
   AvatarFallback,
   AvatarImage,
 } from "../components/ui/avatar"
+import { useState, useEffect } from "react";
 
 import { Badge } from "../components/ui/badge"
 import { Button } from "../components/ui/button"
@@ -186,14 +187,32 @@ const GmailCards = () => {
       elements: {
         arc: {
           borderWidth: 1, // Set the width of the border
-          borderColor: 'black', // Set the color of the border
+          borderColor: 'white', // Set the color of the border
         }
       },
     };
-  
+    const [emails, setEmails] = useState([]);
+
+  useEffect(() => {
+    const fetchEmails = async () => {
+      try {
+        const response = await axios.get("http://localhost:5000/emails", {
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("accessToken")}`, // Assuming the access token is stored in localStorage
+          },
+        });
+        setEmails(response.data);
+      } catch (error) {
+        console.error("Error fetching emails:", error);
+      }
+    };
+
+    fetchEmails();
+  }, []);
     return(
-      <div className="grid gap-4 md:grid-cols-2 md:gap-3 lg:grid-cols-4">
-      <Card  x-chunk="dashboard-01-chunk-0" className="h-[250px]  bg-[#191919] border-none">
+      <div className="space-y-4">
+           <div className="grid gap-4 md:grid-cols-2 md:gap-3 lg:grid-cols-4">
+      <Card  x-chunk="dashboard-01-chunk-0" className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
         </CardHeader>
         <CardContent>
@@ -214,7 +233,7 @@ const GmailCards = () => {
           </CardTitle>
         
       </Card>
-      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[#191919] border-none">
+      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
        
         </CardHeader>
@@ -233,7 +252,7 @@ const GmailCards = () => {
         
       </Card>
   
-      <Card x-chunk="dashboard-01-chunk-0 " className="h-[250px]  bg-[#191919] border-none">
+      <Card x-chunk="dashboard-01-chunk-0 " className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
         
         </CardHeader>
@@ -255,7 +274,7 @@ const GmailCards = () => {
           </CardTitle>
         
       </Card>
-      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[#191919] border-none">
+      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
        
         </CardHeader>
@@ -276,6 +295,55 @@ const GmailCards = () => {
   
   
   </div>
+          <div className="grid gap-4 md:gap-8 w-full">
+          <Card className="xl:col-span-2 w-full" x-chunk="dashboard-01-chunk-4">
+            <CardHeader className="flex flex-row items-center">
+              <div className="grid gap-2">
+                <CardTitle>Important mails</CardTitle>
+                <CardDescription>
+                  {`You have ${emails.length} unread Important emails`}
+                </CardDescription>
+              </div>
+              <Button asChild size="sm" className="gap-1 ml-auto bg-[#fecc07] hover:text-black hover:bg-[#fec000] size-sm">
+                <Link href="#">
+                  View All
+                  <ArrowUpRight className="w-4 h-4" />
+                </Link>
+              </Button>
+            </CardHeader>
+            <CardContent>
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Mail</TableHead>
+                    <TableHead className="hidden xl:table-column">From</TableHead>
+                    <TableHead className="hidden xl:table-column">To</TableHead>
+                    <TableHead className="hidden xl:table-column">Date</TableHead>
+                    <TableHead className="text-right">Subject</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {emails.map((email, index) => (
+                    <TableRow key={index}>
+                      <TableCell>
+                        <div className="font-medium">{email.from}</div>
+                      </TableCell>
+                      <TableCell className="hidden xl:table-column">{email.from}</TableCell>
+                      <TableCell className="hidden xl:table-column">{email.to}</TableCell>
+                      <TableCell className="hidden md:table-cell lg:hidden xl:table-column">
+                        {new Date(email.date).toLocaleDateString()}
+                      </TableCell>
+                      <TableCell className="text-right">{email.subject}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </CardContent>
+          </Card>
+          {/* Other cards */}
+        </div>
+      </div>
+   
     )
   }
 

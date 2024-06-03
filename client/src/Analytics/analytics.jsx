@@ -136,7 +136,7 @@ const options = {
   elements: {
     arc: {
       borderWidth: 1, // Set the width of the border
-      borderColor: 'black', // Set the color of the border
+      borderColor: 'white', // Set the color of the border
     }
   },
 };
@@ -192,7 +192,7 @@ export default function AnalyticsPage() {
     elements: {
       arc: {
         borderWidth: 1, // Set the width of the border
-        borderColor: 'black', // Set the color of the border
+        borderColor: 'white', // Set the color of the border
       }
     },
   };

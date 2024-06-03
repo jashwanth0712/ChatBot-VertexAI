@@ -186,14 +186,14 @@ const CalendarCards = () => {
       elements: {
         arc: {
           borderWidth: 1, // Set the width of the border
-          borderColor: 'black', // Set the color of the border
+          borderColor: 'white', // Set the color of the border
         }
       },
     };
   
     return(
       <div className="grid gap-4 md:grid-cols-2 md:gap-3 lg:grid-cols-4">
-      <Card  x-chunk="dashboard-01-chunk-0" className="h-[250px]  bg-[#191919] border-none">
+      <Card  x-chunk="dashboard-01-chunk-0" className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
         </CardHeader>
         <CardContent>
@@ -214,7 +214,7 @@ const CalendarCards = () => {
           </CardTitle>
         
       </Card>
-      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[#191919] border-none">
+      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
        
         </CardHeader>
@@ -233,7 +233,7 @@ const CalendarCards = () => {
         
       </Card>
   
-      <Card x-chunk="dashboard-01-chunk-0 " className="h-[250px]  bg-[#191919] border-none">
+      <Card x-chunk="dashboard-01-chunk-0 " className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
         
         </CardHeader>
@@ -256,7 +256,7 @@ const CalendarCards = () => {
           </CardTitle>
         
       </Card>
-      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[#191919] border-none">
+      <Card x-chunk="dashboard-01-chunk-0"  className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
        
         </CardHeader>
