@@ -83,7 +83,7 @@ export default function DashboardPage() {
     // { name: 'Settings', icon: <Settings className="w-5 h-5" />, path: '#' },
   ];
   return (
-    <div className="md:flex justify-center w-[70vw]">
+    <div className="md:flex justify-center w-[70vw] ">
 
         {/* Side Bar */}
       {/* <div className="flex flex-col w-1/6 min-h-screen bg-muted/40"> */}
@@ -123,7 +123,7 @@ export default function DashboardPage() {
       {/* Side Bar */}
       {
         currentPage === 'Dashboard' &&        
-      <div className="flex-col hidden w-[90vw] h-screen md:flex">
+      <div className="flex-col hidden w-[90vw] h-screen md:flex md:ml-16">
         <div className="border-b ">
           <div className="flex items-center h-16 px-4 ">
             <TeamSwitcher />
