@@ -282,26 +282,29 @@ const MeetCards = () => {
   </div>
   <Card className="w-[100%] mt-16 rounded-full"> 
   <div class="w-full flex rounded-xl relative rounded-full">
-  <div class="flex-1 h-6 bg-red-500 relative">
-    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Red</span>
+  <div class="flex-1 h-6 bg-[#E9DAFF]  flex items-center justify-center text-center relative rounded-l-xl rounded-r">
+  <span class=" absolute text-xs font-bold text-purple font-sans top-7">8am</span>
+
   </div>
-  <div class="flex-1 h-6 bg-orange-500 relative">
+  <div class="flex-1 h-6 bg-[#FFFFFF] relative">
     <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Orange</span>
   </div>
-  <div class="flex-1 h-6 bg-yellow-500 relative">
+  <div class="flex-1 h-6 bg-[#7C55B6] relative rounded-l">
     <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Yellow</span>
   </div>
-  <div class="flex-1 h-6 bg-green-500 relative">
+  <div class="flex-1 h-6 bg-[#8F64CF] relative rounded-r">
     <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Green</span>
   </div>
-  <div class="flex-1 h-6 bg-blue-500 relative">
-    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Blue</span>
-  </div>
-  <div class="flex-1 h-6 bg-indigo-500 relative">
+  <div class="flex-1 h-6 bg-[#FFFFF] flex items-center justify-center text-center relative rounded-l">
+    <span class="text-xs font-bold text-purple font-sans absolute top-7">Lunch Break</span>
+</div>
+
+  <div class="flex-1 h-6 bg-[#C099FA] relative rounded-l">
     <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Indigo</span>
   </div>
-  <div class="flex-1 h-6 bg-purple-500 relative">
-    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Purple</span>
+  <div class="flex-1 h-6 bg-[#D8BDFF] relative flex items-center justify-center text-center  rounded-r-xl">
+  <span class="text-xs font-bold text-purple font-sans absolute top-7"></span>
+
   </div>
 </div>
 
