@@ -14,7 +14,9 @@ import {
   Circle,
   CircleCheck,
   Menu,
+  EllipsisVertical,
   Package2,
+  UserRound,
   Search,
   Users,
 } from "lucide-react"
@@ -192,6 +194,8 @@ const CallCards = () => {
     };
   
     return(
+      <div className="w-full flex flex-col">
+
       <div className="grid gap-4 md:grid-cols-2 md:gap-3 lg:grid-cols-4">
       <Card  x-chunk="dashboard-01-chunk-0" className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
@@ -273,9 +277,190 @@ const CallCards = () => {
           </CardTitle>
         
       </Card>
+      </div>
   
   
+
+    <div className="flex w-full">
+    <Card  x-chunk="dashboard-01-chunk-0" className="flex-1 mx-3 my-3 border-none p-3  shadow-xl">
+        
+          <div  className="flex flex-row justify-between p-3 ">
+              <div className="flex">
+                <div className="flex flex-col justify-center mr-2"> 
+                 <UserRound />
+                </div>
+                <div>
+                  <h1 className="font-bold my-1"> Important Calls</h1>
+                  <p className="text-[10px] text-[#808281]  bg-gray my-1">Recent Chats</p>
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+                <h2 className="text-10px  underline">See all</h2>
+              </div>
+            </div>
+          
+          
+          
+          <ul>
+            <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+              <div className="flex items-center">
+                <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+                 <UserRound />
+                </div>
+                <div className="mx-2 flex flex-col justify-center">
+                  
+                  <h1 className="font-bold ">Jayanth</h1>
+                  <p className="text-xs text-[#808281] font-bold bg-gray bold ">Business Call</p>
+                 
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+              <EllipsisVertical />
+              </div>
+            </li>
+            <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+              <div className="flex items-center">
+                <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+                 <UserRound />
+                </div>
+                <div className="mx-2 flex flex-col justify-center">
+                  
+                  <h1 className="font-bold ">Teja</h1>
+                  <p className="text-xs text-[#808281] font-bold bg-gray bold ">Personal Call</p>
+                 
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+              <EllipsisVertical />
+              </div>
+            </li>
+            <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+              <div className="flex items-center">
+                <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+                 <UserRound />
+                </div>
+                <div className="mx-2 flex flex-col justify-center">
+                  
+                  <h1 className="font-bold ">john</h1>
+                  <p className="text-xs text-[#808281] font-bold bg-gray bold ">Project Discussion</p>
+                 
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+              <EllipsisVertical />
+              </div>
+            </li>
+            <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+              <div className="flex items-center">
+                <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+                 <UserRound />
+                </div>
+                <div className="mx-2 flex flex-col justify-center">
+                  
+                  <h1 className="font-bold ">Praveen</h1>
+                  <p className="text-xs text-[#808281] font-bold bg-gray bold ">Gmeet</p>
+                 
+                </div>
+              </div>  
+              <div className="flex flex-col justify-center">
+              <EllipsisVertical />
+              </div>
+            </li>
+
+          </ul>
+          
+        </Card>
+        <Card  x-chunk="dashboard-01-chunk-0" className="flex-1  mx-3 my-3 border-none p-3  shadow-xl">
+        
+        <div  className="flex flex-row justify-between p-3 ">
+            <div className="flex">
+              <div className="flex flex-col justify-center mr-2"> 
+               <UserRound />
+              </div>
+              <div>
+                <h1 className="font-bold my-1">Normal Calls</h1>
+                <p className="text-[10px] text-[#808281]  bg-gray my-1">Recent Chats</p>
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+              <h2 className="text-10px  underline">See all</h2>
+            </div>
+          </div>
+        
+        
+        
+        <ul>
+          <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+            <div className="flex items-center">
+              <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+               <UserRound />
+              </div>
+              <div className="mx-2 flex flex-col justify-center">
+                
+                <h1 className="font-bold ">Prashanth</h1>
+                <p className="text-xs text-[#808281] font-bold bg-gray bold ">Personal Call</p>
+               
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+            <EllipsisVertical />
+            </div>
+          </li>
+          <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+            <div className="flex items-center">
+              <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+               <UserRound />
+              </div>
+              <div className="mx-2 flex flex-col justify-center">
+                
+                <h1 className="font-bold ">Thomas</h1>
+                <p className="text-xs text-[#808281] font-bold bg-gray bold ">Project Discussion</p>
+               
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+            <EllipsisVertical />
+            </div>
+          </li>
+          <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+            <div className="flex items-center">
+              <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+               <UserRound />
+              </div>
+              <div className="mx-2 flex flex-col justify-center">
+                
+                <h1 className="font-bold ">Micheal</h1>
+                <p className="text-xs text-[#808281] font-bold bg-gray bold ">Project Discussion</p>
+               
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+            <EllipsisVertical />
+            </div>
+          </li>
+          <li  className="flex flex-row justify-between p-2 bg-[#F4F5F7] rounded-xl my-2">
+            <div className="flex items-center">
+              <div className="flex flex-center flex-col items-center justify-center bg-[#D6D6D6] w-[50px] h-[50px] rounded-full"> 
+               <UserRound />
+              </div>
+              <div className="mx-2 flex flex-col justify-center">
+                
+                <h1 className="font-bold ">Ranjith</h1>
+                <p className="text-xs text-[#808281] font-bold bg-gray bold ">Casual</p>
+               
+              </div>
+            </div>  
+            <div className="flex flex-col justify-center">
+            <EllipsisVertical />
+            </div>
+          </li>
+
+        </ul>
+        
+      </Card>
   </div>
+  </div>
+  
     )
   }
 

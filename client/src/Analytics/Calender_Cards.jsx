@@ -57,6 +57,7 @@ import HorizontalBarChart from "@/components/bargraphAnalytics/analyticsbar.jsx"
 import Combobox from "../components/ui/combobox.jsx"
 
 
+
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 const CalendarCards = () => {
     const MyChart = () => {
