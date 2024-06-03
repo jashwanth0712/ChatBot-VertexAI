@@ -7,7 +7,9 @@
 -  Research and Reporting
 
 ## For User ##
+
 **Professional Purpose**
+
 1. **Calendar Management**:
     - Scheduling and coordinating meetings, appointments, and events.
     - Managing travel arrangements, including flights, accommodations, and itineraries.
@@ -27,7 +29,7 @@
     - Conducting research and compiling data to assist the CEO in decision-making.
     - Preparing reports and summaries.
 
- **Personal Responsibilities**
+ **Personal Purpose**
 
 1. **Personal Errands**:
     - Managing personal errands such as shopping, appointments, and household management.
@@ -42,34 +44,17 @@
     - Managing family schedules and activities.
     - Assisting with children's school and extracurricular activities if applicable.
 
-                                       Adding New Items to Layout
-
-![Changing items](https://github.com/M-sasank/square-ai-hackathon/blob/main/website/src/assets/dnd.gif?raw=true)
-
-                                       Changing Layout
-
-- **Data-Driven Insights**: Storeguide's AI analyzes invoices and creates user graphs, enabling business owners to recognize patterns and gain valuable insights into customer behavior. These insights help in making informed decisions to enhance store performance.
-
-- **Custom Gift Cards**: Leveraging the invoice data, business owners can create custom gift cards tailored to specific user groups. When similar invoices are generated in the future, these custom gift cards can be gifted to customers, enhancing loyalty and driving sales.
-
-In summary, Storeguide offers a unique combination of convenience, data-driven decision-making, and personalization for both customers and business owners, making the shopping experience enjoyable and insightful for all.
+In summary, Nexus is all in one personal and professional ai intergrated chatbot which makes tasks easier and automated through mutiple intergrations.
 
 ## How we built it
-- **Square APIs used**:
-    - Auth: To let any seller to connect with our app to gain insights, send gift cards and add/modify layouts.
-    - Orders: To generate orders for a customer
-    - Invoice: To generate an invoice for a customer's order
-    - Gift Cards: To send gift cards to customer groups
-    - Customers: To create/retrieve customers when placing orders
-    - Catalog: To add/retrieve store items
-    - Inventory: To check store items and display them in the layout
 
 - **Google Cloud Tools used**:
-    - PaLM: For interaction with user, generating user graphs, calculating optimal path
-    - Google Cloud Run: For deploying containerized backends, Machine Learning and AI models used for this project
-    - Google Text-to-Speech: For generating voiceovers and voice replies to user.
+    - Vertex API Agent Builder
+    - Gmail API
+    - Dialouge Phone Gateway
+    - BigQuery API
 
-**Technologies**: React, JavaScript, FastAPI, Docker, Google Cloud
+**Technologies**: React, Node.js, Google Cloud
 ## Challenges we ran into
 - Working our way through the documentations of Sqaure APIs and SDKs was difficult initially
 - Accurately generating user graphs based on invoice data was quite difficult
