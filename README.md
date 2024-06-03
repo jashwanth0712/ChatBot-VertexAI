@@ -1,18 +1,46 @@
-# [square-ai-hackathon](https://www.youtube.com/watch?v=9OfL9H6AmhQ)
 # What it does
-**Storeguide** is a cutting-edge AI-powered solution designed to revolutionize your shopping experience and empower business owners in the retail industry. It offers a range of features for both customers and store owners, making shopping fun, efficient, and insightful.
+**Nexus** is a cutting-edge Vertex AI Powered Chatbot which behaves like a personal assistant to all your work and personal related tasks. It offers a range of features which includes
+- Calendar management
+- Email organization
+- Meeting Preparation and Follow-up
+- Automated responses for approvals
+-  Research and Reporting
 
-## For Customers
+## For User ##
+**Professional Purpose**
+1. **Calendar Management**:
+    - Scheduling and coordinating meetings, appointments, and events.
+    - Managing travel arrangements, including flights, accommodations, and itineraries.
+2. **Communication**:
+    - Handling correspondence, including emails, phone calls, and mail.
+    - Acting as a gatekeeper, filtering communication and determining which issues require the CEO's attention.
+3. **Meeting Preparation and Follow-up**:
+    - Preparing agendas, documents, and presentations for meetings.
+    - Taking minutes and following up on action items.
+4. **Project Management**:
+    - Assisting with the planning and execution of projects.
+    - Tracking deadlines, progress, and ensuring tasks are completed on time.
+5. **Office Management**:
+    - Maintaining an organized and efficient office environment.
+    - Liaising with other staff members, departments, and external stakeholders.
+6. **Research and Reporting**:
+    - Conducting research and compiling data to assist the CEO in decision-making.
+    - Preparing reports and summaries.
 
-- **Smart Navigation**: With Storeguide, you can simply tell the AI what you need, and it will pinpoint your current location within the store, providing precise directions to your desired products in your vicinity. Say goodbye to getting lost in the grocery store or spending hours searching for specific items.
+ **Personal Responsibilities**
 
-- **Product Lists and Locations**: If you're unsure about what to buy for a specific recipe or task, our AI can provide you with comprehensive lists of items and their exact locations in the store. This simplifies your shopping process and ensures you don't forget any essential ingredients.
-
-## For Business Owners
-
-- **Effortless Store Layout Design**: Store owners can create or modify store layouts with ease, using a simple image click or drag-and-drop interface. The AI utilizes data from Square API, including invoices and inventory, to make suggestions on the optimal arrangement of products in the store.
-
-![Adding New Items to Layout](https://github.com/M-sasank/square-ai-hackathon/blob/main/website/src/assets/addnew.gif?raw=true)
+1. **Personal Errands**:
+    - Managing personal errands such as shopping, appointments, and household management.
+    - Coordinating with household staff if applicable.
+2. **Travel and Leisure**:
+    - Planning personal travel, vacations, and leisure activities.
+    - Managing travel logistics and ensuring smooth transitions between professional and personal activities.
+3. **Financial Management**:
+    - Assisting with personal finances, including bill payments, budgeting, and investment tracking.
+    - Coordinating with accountants, financial advisors, and other professionals.
+4. **Family Coordination**:
+    - Managing family schedules and activities.
+    - Assisting with children's school and extracurricular activities if applicable.
 
                                        Adding New Items to Layout
 
