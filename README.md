@@ -56,25 +56,14 @@ In summary, Nexus is all in one personal and professional ai intergrated chatbot
 
 **Technologies**: React, Node.js, Google Cloud
 ## Challenges we ran into
-- Working our way through the documentations of Sqaure APIs and SDKs was difficult initially
-- Accurately generating user graphs based on invoice data was quite difficult
-- Validation of PaLM responses. PaLM occasionally gives unexpected responses
+- Working our way through the documentations of Vertex AI Agent Builder was difficult initially
+- Organizing Mails According the body and subject using LLM's was tedious task.
 
 ## Accomplishments that we're proud of
-- We are proud to have developed an innovative and cutting-edge AI-powered solution that has the potential to revolutionize the retail industry. 
-- Our uniquely themed, interactive front-end layout design of the store, that allows shop keepers to change layout anytime.
-- Our team's ability to overcome various challenges during the development process.
+
 
 ## What we learned
--  We aimed to create a unique solution in a competitive market, and this required a ton of research, thinking creatively, and understanding the market needs.
-- We learned how to effectively integrate third-party APIs into our application, enabling us to access and manipulate data from these services.
--  We learned how to analyze data to recognize patterns and derive valuable insights for business owners
-- We learnt how to use PaLM AI and are now confident enough to use it in our future projects.
 
-## What's next for Storeguide
-Storeguide has so much space it can expand its reach into thereby, enhancing its capabilities, and adapting to the evolving needs of the retail market. Few of these points are:
 
-- Storeguide can continue to evolve by improving its AI capabilities. For example, a continuously improving AI and NLP models can give better customer interactions, smarter recommendations, and an even more accurate understanding of customer behavior day by day.
-- Storeguide can get integrate other Square endpoints such as, Loyalty Program, Payments, etc.
-- The application can be expanded beyond grocery stores to clothing stores, electronics stores, or even larger department stores.
--  Implementing a feedback system where customers can rate their shopping experiences and provide suggestions
+## What's next for Nexus
+
