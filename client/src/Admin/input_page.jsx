@@ -9,7 +9,7 @@ export default function Stepper() {
                     <StepperDemo />
                 </div>
             </div>
-            <MobileMockup/>
+            {/* <MobileMockup/> */}
         </div>
     )
 }

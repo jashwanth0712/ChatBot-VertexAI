@@ -59,6 +59,7 @@ import Combobox from "../components/ui/combobox.jsx"
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 const MeetCards = () => {
+  
     const MyChart = () => {
       const options = {
         chart: {
@@ -147,7 +148,7 @@ const MeetCards = () => {
           '#905CD6', // Food
           '#C7ADEB', // Apparels
           '#E3D6F5', // Electronics
-          '#FAF2D5', // Household
+          '#F7ADEB', // Household
         ],
         hoverOffset: 4,
       }],
@@ -192,6 +193,8 @@ const MeetCards = () => {
     };
   
     return(
+      <div>
+
       <div className="grid gap-4 md:grid-cols-2 md:gap-3 lg:grid-cols-4">
       <Card  x-chunk="dashboard-01-chunk-0" className="h-[250px]  bg-[191919] border-none">
         <CardHeader className="flex flex-row items-center justify-end pb-2 space-y-0">
@@ -273,8 +276,36 @@ const MeetCards = () => {
           </CardTitle>
         
       </Card>
+
   
   
+  </div>
+  <Card className="w-[100%] mt-16 rounded-full"> 
+  <div class="w-full flex rounded-xl relative rounded-full">
+  <div class="flex-1 h-6 bg-red-500 relative">
+    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Red</span>
+  </div>
+  <div class="flex-1 h-6 bg-orange-500 relative">
+    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Orange</span>
+  </div>
+  <div class="flex-1 h-6 bg-yellow-500 relative">
+    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Yellow</span>
+  </div>
+  <div class="flex-1 h-6 bg-green-500 relative">
+    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Green</span>
+  </div>
+  <div class="flex-1 h-6 bg-blue-500 relative">
+    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Blue</span>
+  </div>
+  <div class="flex-1 h-6 bg-indigo-500 relative">
+    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Indigo</span>
+  </div>
+  <div class="flex-1 h-6 bg-purple-500 relative">
+    <span class="absolute top-0 left-0 opacity-0 hover:opacity-100 transition-opacity">Purple</span>
+  </div>
+</div>
+
+      </Card>
   </div>
     )
   }
