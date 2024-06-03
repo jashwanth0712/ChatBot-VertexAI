@@ -58,8 +58,11 @@ In summary, Nexus is all in one personal and professional ai intergrated chatbot
 ## Challenges we ran into
 - Working our way through the documentations of Vertex AI Agent Builder was difficult initially
 - Organizing Mails According the body and subject using LLM's was tedious task.
+- Integrating the chatbot with pdf's and accessing the data was bit difficult.
 
 ## Accomplishments that we're proud of
+- We implemented our chatbot which can take calls and respond with our given datasets
+- It can get mails from the user's account and organize and intimate the user.
 
 
 ## What we learned
