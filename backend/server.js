@@ -131,7 +131,7 @@ app.get('/auth/google/callback',
   passport.authenticate('google', { failureRedirect: '/' }),
   (req, res) => {
     // Redirect with tokens as query parameters
-    res.redirect(`http://localhost:5173/emails/?accessToken=${req.user.accessToken}&refreshToken=${req.user.refreshToken}`);
+    res.redirect(`${process.env.REDIRECT_URL}/emails/?accessToken=${req.user.accessToken}&refreshToken=${req.user.refreshToken}`);
   }
 );
 

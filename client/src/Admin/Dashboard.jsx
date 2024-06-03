@@ -7,6 +7,7 @@ import { useState } from "react";
 import IntegrationsPage from "./Integrations.jsx";
 import MobileMockup from "./MobileMockup.jsx";
 import { SwitchForm } from "@/components/ui/questions.jsx";
+import LeadGenerator from "./LeadGenerator.jsx"
 import AnalyticsPage from "@/Analytics/analytics.jsx"
 // import { SwitchForm } from "@/components/ui/questions.jsx";
 // import { Package2 } from "react-icons/fi";
@@ -78,8 +79,8 @@ export default function DashboardPage() {
     { name: 'Dashboard', icon: <Home className="w-5 h-5" />, path: '#' },
     { name: 'Bots', icon: <BotMessageSquare className="w-5 h-5"/>, path: '#' },
     { name: 'Integrations', icon: <Blocks  className="w-5 h-5" />, path: '#' },
-    // { name: 'Analytics', icon: <Users2 className="w-5 h-5" />, path: '#' },
     { name: 'Analytics', icon: <LineChart className="w-5 h-5" />, path: '#' },
+    { name: 'Lead-Generator', icon: <Users2 className="w-5 h-5" />, path: '#' },
     // { name: 'Settings', icon: <Settings className="w-5 h-5" />, path: '#' },
   ];
   return (
@@ -271,6 +272,10 @@ export default function DashboardPage() {
       {
         currentPage==='Analytics' &&
         <AnalyticsPage/>
+      }
+      {
+        currentPage==='Lead-Generator' &&
+        <LeadGenerator/>
       }
 
 

@@ -60,6 +60,106 @@ import Combobox from "../components/ui/combobox.jsx"
 
 ChartJS.register(ArcElement, Tooltip, Legend, ChartDataLabels);
 const GmailCards = () => {
+  const SplineAreaChart = () => {
+    const options = {
+      chart: {
+        type: 'area',
+        stacked: false,
+        height: 300,
+       
+        toolbar: {
+          show: false
+        }
+      },
+      dataLabels: {
+        enabled: false
+      },
+      markers: {
+        size: 0
+      },
+     
+      fill: {
+        type: 'gradient',
+        gradient: {
+          shadeIntensity: 1,
+          inverseColors: false,
+          opacityFrom: 0.5,
+          opacityTo: 0,
+          stops: [0, 90, 100]
+        },
+      },
+      xaxis: {
+        labels: {
+          show: false
+        },
+        axisBorder: {
+          show: true
+        },
+        axisTicks: {
+          show: false
+        }
+      },
+      yaxis: {
+        labels: {
+            show: false
+          },
+        axisBorder: {
+            show: true
+          },
+      },
+      grid: {
+        show: false
+      },
+      tooltip: {
+        enabled: false
+      },
+      title: {
+        text: undefined
+      },
+      subtitle: {
+        text: undefined
+      },
+      legend: {
+        show: false
+      }
+    };
+   
+    const series = [
+      {
+        name: 'Series 1',
+        data: [
+          { x: new Date('2018-01-01').getTime(), y: 31 },
+          { x: new Date('2018-01-02').getTime(), y: 40 },
+          { x: new Date('2018-01-03').getTime(), y: 28 },
+          { x: new Date('2018-01-04').getTime(), y: 51 },
+          { x: new Date('2018-01-05').getTime(), y: 42 },
+          { x: new Date('2018-01-06').getTime(), y: 109 },
+          { x: new Date('2018-01-07').getTime(), y: 100 },
+        ],
+        color: '#FFCD04'
+   
+      },
+      {
+        name: 'Series 2',
+        data: [
+          { x: new Date('2018-01-01').getTime(), y: 10 },
+          { x: new Date('2018-01-02').getTime(), y: 11 },
+          { x: new Date('2018-01-03').getTime(), y: 19 },
+          { x: new Date('2018-01-04').getTime(), y: 28 },
+          { x: new Date('2018-01-05').getTime(), y: 40 },
+          { x: new Date('2018-01-06').getTime(), y: 30 },
+          { x: new Date('2018-01-07').getTime(), y: 50 },
+        ],
+        color: '#FFEB9B'
+      },
+    ];
+   
+    return (
+      <div id="chart">
+        <ReactApexCharts  options={options} series={series} type="area" height="100%" width="100%" />
+      </div>
+    );
+  };
     const MyChart = () => {
       const options = {
         chart: {
@@ -72,7 +172,8 @@ const GmailCards = () => {
         },
         series: [{
           name: 'sales',
-          data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+         data:[Math.floor(Math.random() * 90) + 10, Math.floor(Math.random() * 80) + 20,Math.floor(Math.random() * 90) + 10 , Math.floor(Math.random() * 60) + 40,Math.floor(Math.random() * 90) + 10, Math.floor(Math.random() * 80) + 20,Math.floor(Math.random() * 90) + 10 , Math.floor(Math.random() * 60) + 40,Math.floor(Math.random() * 60) + 40],
+          
           color: '#fecc07'
         }],
         xaxis: {
@@ -142,8 +243,9 @@ const GmailCards = () => {
     ]
     const data = {
       labels: ['Food', 'Apparels', 'Electronics', 'Household'],
-      datasets: [{
-        data: [49, 25, 18, 8],
+       datasets: [{
+        data: [Math.floor(Math.random() * 90) + 10, Math.floor(Math.random() * 80) + 20,Math.floor(Math.random() * 60) + 30 , Math.floor(Math.random() * 60) + 40],
+      
         backgroundColor: [
           '#FFCD04', // Food
           '#D6AE0E', // Apparels
@@ -196,7 +298,7 @@ const GmailCards = () => {
   useEffect(() => {
     const fetchEmails = async () => {
       try {
-        const response = await axios.get("http://localhost:5000/emails", {
+        const response = await axios.get("https://chat-bot-backend-nine.vercel.app/emails", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("accessToken")}`, // Assuming the access token is stored in localStorage
           },
@@ -260,10 +362,10 @@ const GmailCards = () => {
         <div className="flex items-center justify-center w-full h-full">
             <div className="">
             <HorizontalBarChart data={[
-                { label: 'A', percentage: 53, color: '#FFCD04' },
-                { label: 'B', percentage: 21, color: '#FFCD04' },
-                { label: 'C', percentage: 82, color: '#FFCD04' },
-                { label: 'D', percentage: 58, color: '#FFCD04' },
+                { label: 'A', percentage: Math.floor(Math.random() * 100) + 1, color: '#FFCD04' },
+                { label: 'B', percentage: Math.floor(Math.random() * 100) + 1, color: '#FFCD04' },
+                { label: 'C', percentage: Math.floor(Math.random() * 100) + 1, color: '#FFCD04' },
+                { label: 'D', percentage: Math.floor(Math.random() * 100) + 1, color: '#FFCD04' },
               ]}/>
             </div>
         </div>
@@ -281,8 +383,7 @@ const GmailCards = () => {
         <CardContent>
         <div className="flex items-center justify-center w-full h-full">
             <div>
-            <MyChart />
-  
+            <SplineAreaChart/>
             </div>
         </div>
         

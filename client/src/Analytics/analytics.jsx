@@ -229,7 +229,8 @@ export default function AnalyticsPage() {
       },
       series: [{
         name: 'sales',
-        data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+       data:[Math.floor(Math.random() * 90) + 10, Math.floor(Math.random() * 80) + 20,Math.floor(Math.random() * 90) + 10 , Math.floor(Math.random() * 60) + 40,Math.floor(Math.random() * 90) + 10, Math.floor(Math.random() * 80) + 20,Math.floor(Math.random() * 90) + 10 , Math.floor(Math.random() * 60) + 40,Math.floor(Math.random() * 60) + 40],
+          
         color: '#fecc07'
       }],
       xaxis: {

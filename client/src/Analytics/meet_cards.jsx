@@ -72,7 +72,8 @@ const MeetCards = () => {
         },
         series: [{
           name: 'sales',
-          data: [30, 40, 35, 50, 49, 60, 70, 91, 125],
+         data:[Math.floor(Math.random() * 90) + 10, Math.floor(Math.random() * 80) + 20,Math.floor(Math.random() * 90) + 10 , Math.floor(Math.random() * 60) + 40,Math.floor(Math.random() * 90) + 10, Math.floor(Math.random() * 80) + 20,Math.floor(Math.random() * 90) + 10 , Math.floor(Math.random() * 60) + 40,Math.floor(Math.random() * 60) + 40],
+          
           color: '#905CD6'
         }],
         xaxis: {
@@ -142,8 +143,9 @@ const MeetCards = () => {
     ]
     const data = {
       labels: ['Food', 'Apparels', 'Electronics', 'Household'],
-      datasets: [{
-        data: [49, 25, 18, 8],
+       datasets: [{
+        data: [Math.floor(Math.random() * 90) + 10, Math.floor(Math.random() * 80) + 20,Math.floor(Math.random() * 60) + 30 , Math.floor(Math.random() * 60) + 40],
+      
         backgroundColor: [
           '#905CD6', // Food
           '#C7ADEB', // Apparels
@@ -244,10 +246,10 @@ const MeetCards = () => {
         <div className="flex items-center justify-center w-full h-full">
             <div className="">
             <HorizontalBarChart data={[
-                { label: 'A', percentage: 53, color: '#905CD6' },
-                { label: 'B', percentage: 21, color: '#905CD6' },
-                { label: 'C', percentage: 82, color: '#905CD6' },
-                { label: 'D', percentage: 58, color: '#905CD6' },
+                { label: 'A', percentage: Math.floor(Math.random() * 100) + 1, color: '#905CD6' },
+                { label: 'B', percentage: Math.floor(Math.random() * 100) + 1, color: '#905CD6' },
+                { label: 'C', percentage: Math.floor(Math.random() * 100) + 1, color: '#905CD6' },
+                { label: 'D', percentage: Math.floor(Math.random() * 100) + 1, color: '#905CD6' },
               ]}/>
             </div>
         </div>

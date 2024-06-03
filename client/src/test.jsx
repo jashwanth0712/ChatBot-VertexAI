@@ -19,7 +19,7 @@ import { Label } from "./components/ui/label.jsx"
 
 class Signin extends React.Component {
   handleSignin = () => {
-    window.location.href = 'http://localhost:5000/auth/google'; // Redirect to the backend server for Google OAuth
+    window.location.href = 'https://chat-bot-backend-nine.vercel.app/auth/google'; // Redirect to the backend server for Google OAuth
   };
 
   render() {
@@ -96,7 +96,7 @@ const EmailList = () => {
 
   const fetchEmails = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/emails', {
+      const response = await axios.get('https://chat-bot-backend-nine.vercel.app/emails', {
         headers: {
           Authorization: `Bearer ${localStorage.getItem('accessToken')}`, // Send access token in the request header
         },
